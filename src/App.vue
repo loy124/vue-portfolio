@@ -24,10 +24,14 @@
     <!-- banner -->
     <div id="contents">
       <div id="content1">
-        <div class="container"><Introduce /></div>
+        <div class="container">
+          <Introduce />
+        </div>
       </div>
       <div id="content2">
-        <div class="container">content2</div>
+        <div class="container">
+          <Skill />
+        </div>
       </div>
       <div id="content3">
         <div class="container">content3</div>
@@ -47,15 +51,17 @@
   </div>
 </template>
 <script>
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import Introduce from './components/Introduce';
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import Introduce from "./components/Introduce";
+import Skill from "./components/Skill";
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Navbar,
     Banner,
     Introduce,
+    Skill
   },
   data() {
     return {};
@@ -63,9 +69,9 @@ export default {
   methods: {
     handleScroll(e) {
       console.log(e);
-    },
+    }
   },
-  mounted() {},
+  mounted() {}
 };
 </script>
 <style>
@@ -94,6 +100,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* font-family: "Heebo, sans-serif"; */
 }
 button {
   background-color: #fff;
@@ -169,7 +176,7 @@ button {
 #content1::after {
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   /* background: url('./assets/back.jpg') 50% 50%; */
   position: absolute;
   top: 0;
@@ -179,7 +186,7 @@ button {
 }
 #content2 {
   /* height: 480px; */
-  height: 105vh;
+  height: 100%;
   position: relative;
   background-color: #fff;
   z-index: 1;
@@ -188,7 +195,7 @@ button {
 #content2::after {
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   /* background: url('./assets/back.jpg') 50% 50%; */
   position: absolute;
   top: 0;
@@ -209,7 +216,7 @@ button {
 #content3::after {
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   /* background: url('./assets/back.jpg') 50% 50%; */
   position: absolute;
   top: 0;
@@ -229,8 +236,8 @@ button {
 #footer-nav::after {
   width: 100%;
   height: 100%;
-  content: '';
-  background: url('./assets/back2.jpg') 50% 50%;
+  content: "";
+  background: url("./assets/back2.jpg") 50% 50%;
   position: absolute;
   top: 0;
   left: 0;
@@ -249,8 +256,8 @@ button {
 #footer-info::after {
   width: 100%;
   height: 100%;
-  content: '';
-  background: url('./assets/back2.jpg') 50% 50%;
+  content: "";
+  background: url("./assets/back2.jpg") 50% 50%;
   position: absolute;
   top: 0;
   left: 0;

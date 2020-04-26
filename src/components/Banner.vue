@@ -12,7 +12,7 @@
 
     <div>
       <vue-typed-js
-        :typeSpeed="20"
+        :typeSpeed="13"
         :showCursor="false"
         :strings="[
           `<div class=typed >const introduce = {
@@ -20,7 +20,7 @@
                   <div>name : '이온유',</div>
                 <div>birth : '1994.01.03',</div>
                 <div>job : 'Web Developer',</div>
-                <div>Skiil: {'HTML', 'CSS', 'JAVASCRIPT',</div>
+                <div>Skill: {'HTML', 'CSS', 'JAVASCRIPT',</div>
                 <div>'JAVA', 'ORACLE', 'MYSQL'},</div>
                 <div>Framework: {'Vue.js', 'Jquery',</div>
                 <div>  'Node.js', 'Spring', 'Spring-boot'}</div>
@@ -40,9 +40,7 @@
         </h1>
       </vue-typed-js>
     </div>
-    <div class="move-about-button" v-scroll-to="'#content1'">
-      ∇
-    </div>
+    <div class="move-about-button" v-scroll-to="'#content1'">∇</div>
   </div>
 </template>
 
@@ -79,8 +77,8 @@ export default {};
 .banner-container::after {
   width: 100%;
   height: 100%;
-  content: '';
-  background: url('../assets/back2.jpg') 50% 50%;
+  content: "";
+  background: url("../assets/back2.jpg") 50% 50%;
   position: absolute;
   top: 0;
   left: 0;

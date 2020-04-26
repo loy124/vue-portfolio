@@ -9,13 +9,7 @@
               <div class="name-title">LEEONYOU</div>
             </kinesis-element>
           </kinesis-container>
-          <!-- <div class="header-left-site-button1">
-            <div>프로중개사이트</div>
-          </div>-->
-          <!-- <div class="vertical-line"></div>
-          <div class="header-left-site-button2">
-            <div>방주인사이트</div>
-          </div>-->
+
         </div>
       </div>
     </div>
@@ -96,11 +90,7 @@ export default {
 }
 .menu-item {
   color: #fff;
-  /* color: rgb(235, 235, 235); */
-  /* background: -webkit-linear-gradient(#eee, #888888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  /* color: #999999; */
+
 }
 
 .header-container {
