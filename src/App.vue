@@ -34,7 +34,9 @@
         </div>
       </div>
       <div id="content3">
-        <div class="container">content3</div>
+        <div class="container">
+          <Result />
+        </div>
       </div>
     </div>
 
@@ -55,13 +57,15 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Introduce from "./components/Introduce";
 import Skill from "./components/Skill";
+import Result from "./components/Result";
 export default {
   name: "app",
   components: {
     Navbar,
     Banner,
     Introduce,
-    Skill
+    Skill,
+    Result
   },
   data() {
     return {};
@@ -207,7 +211,7 @@ button {
 #content3 {
   /* height: 380px; */
   /* line-height: 380px; */
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
   position: relative;
   z-index: 1;
@@ -228,7 +232,7 @@ button {
 #footer-nav {
   height: 60px;
   line-height: 60px;
-  background-color: ;
+  /* background-color: ; */
   position: relative;
   z-index: 1;
 }
