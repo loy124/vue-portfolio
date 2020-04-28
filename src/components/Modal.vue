@@ -27,7 +27,7 @@
 export default {};
 </script>
 
-<style scoped>
+<style>
 * {
   box-sizing: border-box;
 }
@@ -49,7 +49,7 @@ export default {};
 }
 
 .modal-container {
-  width: 360px;
+  width: 1000px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
