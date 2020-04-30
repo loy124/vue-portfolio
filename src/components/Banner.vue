@@ -12,7 +12,7 @@
 
     <div>
       <vue-typed-js
-        :typeSpeed="13"
+        :typeSpeed="11"
         :showCursor="false"
         :strings="[
           `<div class=typed >const introduce = {
@@ -20,9 +20,10 @@
                   <div>name : '이온유',</div>
                 <div>birth : '1994.01.03',</div>
                 <div>job : 'Web Developer',</div>
-                <div>Skill: {'HTML', 'CSS', 'JAVASCRIPT',</div>
+                <div>phoneNumber : '010-9536-5780',</div>
+                <div>skill: {'HTML', 'CSS', 'JAVASCRIPT',</div>
                 <div>'JAVA', 'ORACLE', 'MYSQL'},</div>
-                <div>Framework: {'Vue.js', 'Jquery',</div>
+                <div>framework: {'Vue.js', 'Jquery',</div>
                 <div>  'Node.js', 'Spring', 'Spring-boot'}</div>
                 <div>};</div>
                 <br>

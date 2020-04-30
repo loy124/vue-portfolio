@@ -1,15 +1,4 @@
 <template>
-  <!-- <div id="app">
-    <Navbar />
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-      <div>
-        <a href="./index.html">aaaa</a>
-      </div>
-    </div>
-    <router-view />
-  </div>-->
   <div id="app" v-on:scroll.passive="handleScroll">
     <!-- <div id="header"></div> -->
     <Navbar></Navbar>
@@ -42,12 +31,15 @@
 
     <!-- //contents -->
     <div id="footer">
-      <div id="footer-nav">
-        <div class="container">footer-nav</div>
-      </div>
-      <div id="footer-info">
+      <kinesis-container>
+        <kinesis-element :strength="5">Copyright 2020 LEE ON YOU All rights reserved</kinesis-element>
+      </kinesis-container>
+      <!-- <div id="footer-nav"> -->
+
+      <!-- </div> -->
+      <!-- <div id="footer-info">
         <div class="container">footer-info</div>
-      </div>
+      </div>-->
     </div>
     <!-- //footer -->
   </div>
@@ -72,34 +64,13 @@ export default {
   },
   methods: {
     handleScroll(e) {
-      console.log(e);
+      // console.log(e);
     }
   },
   mounted() {}
 };
 </script>
 <style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -132,43 +103,19 @@ button {
   z-index: 1;
 }
 
-/* #banner::after {
-  width: 100%;
-  height: 100%;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.5;
-} */
-
-/* #contents {
-  height: 790px;
-} */
-
 #footer {
-  background-color: #222222;
-  height: 220px;
+  position: relative;
+  z-index: 0;
+  /* background-color: #222222; */
+  height: 60px;
+  /* background: url("./assets/back2.jpg") 50% 50%; */
+  background: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* 레이아웃 */
 
-/* #header-top {
-  height: 70px;
-  line-height: 70px;
-  background: #b2ebf2;
-} */
-/* #header-nav {
-         height: 70px;
-         line-height: 70px;
-         background: #80deea;
-     } */
-
-/* #content1 {
-  height: 90px;
-  line-height: 90px;
-  background-color: #26c6da;
-} */
 #content1 {
   /* height: 480px; */
   height: 105vh;
@@ -228,47 +175,6 @@ button {
   z-index: -1;
   background-attachment: fixed;
 }
-
-#footer-nav {
-  height: 60px;
-  line-height: 60px;
-  /* background-color: ; */
-  position: relative;
-  z-index: 1;
-}
-
-#footer-nav::after {
-  width: 100%;
-  height: 100%;
-  content: "";
-  background: url("./assets/back2.jpg") 50% 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-attachment: fixed;
-}
-
-#footer-info {
-  height: 160px;
-  line-height: 160px;
-  background-color: #222222;
-  position: relative;
-  z-index: 1;
-}
-
-#footer-info::after {
-  width: 100%;
-  height: 100%;
-  content: "";
-  background: url("./assets/back2.jpg") 50% 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-attachment: fixed;
-}
-/* 컨테이너 */
 
 .container {
   width: 1100px;

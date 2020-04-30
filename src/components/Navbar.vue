@@ -9,7 +9,6 @@
               <div class="name-title">LEEONYOU</div>
             </kinesis-element>
           </kinesis-container>
-
         </div>
       </div>
     </div>
@@ -18,45 +17,45 @@
         <div class="header-menu-item header-menu-item1">
           <kinesis-container>
             <kinesis-element :strength="2">
-              <div class="menu-item" v-scroll-to="'#element'">HOME</div>
+              <div class="menu-item" v-scroll-to="'.banner-container'">HOME</div>
             </kinesis-element>
           </kinesis-container>
         </div>
         <div class="header-menu-item header-menu-item1">
           <kinesis-container>
             <kinesis-element :strength="2">
-              <div class="menu-item">ABOUT</div>
+              <div v-scroll-to="'#content1'" class="menu-item">ABOUT</div>
             </kinesis-element>
           </kinesis-container>
         </div>
         <div class="header-menu-item header-menu-item2">
           <kinesis-container>
             <kinesis-element :strength="2">
-              <div class="menu-item">SKILL</div>
+              <div v-scroll-to="'.skills-area'" class="menu-item">SKILL</div>
             </kinesis-element>
           </kinesis-container>
         </div>
         <div class="header-menu-item header-menu-item3">
           <kinesis-container>
             <kinesis-element :strength="2">
-              <div class="menu-item">PROJECT</div>
+              <div v-scroll-to="'.portfolio-area'" class="menu-item">PROJECT</div>
             </kinesis-element>
           </kinesis-container>
         </div>
-        <div class="header-menu-item header-menu-item4">
+        <!-- <div class="header-menu-item header-menu-item4">
           <kinesis-container>
             <kinesis-element :strength="3">
               <div class="menu-item">CONTACT</div>
             </kinesis-element>
           </kinesis-container>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     //로그인 데이터
@@ -64,21 +63,21 @@ export default {
   },
   mounted() {},
   computed: {
-    ...mapState(['loginData', 'loginModal', 'registerModal']),
+    ...mapState(["loginData", "loginModal", "registerModal"])
     // ...mapMutations(["SET_LOGIN_MODAL"])
   },
   methods: {
-    ...mapMutations(['SET_LOGIN', 'SET_LOGIN_MODAL', 'SET_REGISTER_MODAL']),
+    ...mapMutations(["SET_LOGIN", "SET_LOGIN_MODAL", "SET_REGISTER_MODAL"]),
     getLoginData() {
       // this.loginData = localStorage.getItem('login');
       // this.SET_LOGIN(this.loginData);
     },
     logout() {
-      console.log('test');
-      sessionStorage.removeItem('login');
-      this.SET_LOGIN('');
-    },
-  },
+      // console.log("test");
+      sessionStorage.removeItem("login");
+      this.SET_LOGIN("");
+    }
+  }
 };
 </script>
 
@@ -90,7 +89,6 @@ export default {
 }
 .menu-item {
   color: #fff;
-
 }
 
 .header-container {

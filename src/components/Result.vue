@@ -3,12 +3,12 @@
     <div class="title title-portfolio">PORTFOLIO</div>
     <div class="container">
       <div class="portfolio-filter-wrapper">
-        <div class="portfolio-filter-item">ALL</div>
-        <div class="portfolio-filter-item">WEB</div>
-        <div class="portfolio-filter-item">AWARDS</div>
+        <div class="portfolio-filter-item" @click="portfolioFilter('all')">ALL</div>
+        <div class="portfolio-filter-item" @click="portfolioFilter('web')">WEB</div>
+        <div class="portfolio-filter-item" @click="portfolioFilter('award')">AWARDS</div>
       </div>
       <div class="portfolio-item-wrapper">
-        <div v-for="(portfolio, index) in portfolios" :key="index" class="portfolio-item">
+        <div v-for="(portfolio, index) in selectedPortfolios" :key="index" class="portfolio-item">
           <div class="portfolio-item-image-container">
             <div class="portfolio-item-image-wrapper">
               <img :src="portfolio.image" @click="clickModal(portfolio.title)" />
@@ -20,12 +20,31 @@
       </div>
     </div>
     <Modal v-if="modalShow">
-      <div slot="header">
-        <div class="modal-header-wrapper">
-          <div class="modal-header-close-button" @click="closeModal">x</div>
+      <div slot="header"></div>
+      <div slot="body" class="modal-body-container">
+        <div class="modal-header-image-wrapper">
+          <img :src="modalData.image" />
+        </div>
+        <div class="modal-header-close-button" @click="closeModal">x</div>
+        <div class="modal-header-item modal-header-title-wrapper">{{modalData.title}}</div>
+        <div class="modal-header-item modal-header-content-wrapper">{{modalData.content}}</div>
+        <div class="modal-header-item modal-header-github-wrapper">
+          <div class="modal-header-item-title">github:</div>
+          <a
+            :href="modalData.github"
+            target="_blank"
+            class="modal-headet-item-content"
+          >{{modalData.github}}</a>
+        </div>
+        <div class="modal-header-item modal-header-blog-wrapper">
+          <div class="modal-header-item-title">blog:</div>
+          <a
+            :href="modalData.blog"
+            target="_blank"
+            class="modal-headet-item-content"
+          >{{modalData.blog}}</a>
         </div>
       </div>
-      <div slot="body">{{modalData}}</div>
       <div slot="footer"></div>
     </Modal>
   </section>
@@ -126,18 +145,33 @@ export default {
             어디에서나 볼수있는 버스 정류소 안내기에 미세먼지 측정센서 + 와이파이를 연동하여 미세먼지에 대한 값을 수집하고 값을 DB에 저장하여 각 지역별에 맞는 미세먼지 대책을 낼 수 있는 아이디어를 제출했습니다. 해당 공모전을 통해 장려상을 수상했습니다.`
         }
       ],
+      selectedPortfolios: [],
       modalData: "",
       modalShow: false
     };
   },
+  mounted() {
+    this.portfolioFilter("all");
+  },
   methods: {
+    portfolioFilter(type) {
+      // console.log(type);
+      if (type === "all") {
+        this.selectedPortfolios = this.portfolios;
+      } else {
+        this.selectedPortfolios = this.portfolios.filter(
+          li => li.type === type
+        );
+      }
+      // console.log(this.selectedPortfolios);
+    },
     clickModal(title) {
       this.modalShow = true;
-      console.log(title);
+      // console.log(title);
       this.modalData = this.portfolios.filter(
         portfolio => portfolio.title === title
       )[0];
-      console.log(this.modalData);
+      // console.log(this.modalData);
     },
     closeModal() {
       this.modalShow = false;
@@ -155,7 +189,7 @@ export default {
   padding-bottom: 70px;
 }
 .title-portfolio {
-  /* margin-top: 100px; */
+  padding-bottom: 40px;
 }
 
 .title::after {
@@ -245,5 +279,65 @@ export default {
 
 .portfolio-item-image-container {
   width: 460px;
+}
+.modal-body-container {
+  position: relative;
+}
+.modal-header-close-button {
+  width: 30px;
+  margin-left: auto;
+  font-size: 60px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  right: -10vh;
+  top: -4vh;
+}
+
+.modal-header-image-wrapper {
+  height: 48vh;
+  text-align: center;
+  position: relative;
+}
+.modal-header-image-wrapper > img {
+  height: 100%;
+  width: inherit;
+}
+.modal-header-title-wrapper {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 27px;
+}
+.modal-header-item {
+  color: #f8f8f8f8;
+}
+.modal-header-content-wrapper {
+  margin-top: 10px;
+  text-align: center;
+  color: #bbbbbb;
+
+  font-size: 16px;
+}
+.modal-header-github-wrapper {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.modal-header-blog-wrapper {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.modal-header-item-title {
+  width: 80px;
+  margin-right: 30px;
+  font-size: 18px;
+  color: #bbbbbb;
+}
+.modal-headet-item-content {
+  color: #f8f8f8f8;
+  font-size: 22px;
 }
 </style>
