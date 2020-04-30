@@ -42,7 +42,7 @@
           class="icon-img-wrapper"
         >
           <img src="../assets/google-drive.png" class="icon-img" />Portfolio -
-          PPT ver(대학및 공모전 생활)
+          PPT ver(대학및 공모전)
         </a>
       </div>
     </div>
@@ -95,14 +95,14 @@ export default {};
 }
 .icon-img {
   width: 20px;
-  margin-right: 6px;
+  margin-right: 15px;
 }
 .icon-img-wrapper {
   display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 20px;
   padding-bottom: 2px;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .introduce-profile-wrapper {
