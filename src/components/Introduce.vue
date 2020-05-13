@@ -4,7 +4,7 @@
     <div class="introduce-container">
       <div class="introduce-profile-image-wrapper">
         <div class="introduce-profile-wrapper">
-          <img src="../assets/mail.png" />
+          <img src="../assets/profile.jpg" />
         </div>
         <div class="introduce-profile-name">이온유</div>
         <div class="introduce-profile-job">JUNIOR DEVELOPER</div>
